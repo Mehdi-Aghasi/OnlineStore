@@ -13,16 +13,17 @@ namespace OnlineStore.Domain.Entities
         public string Picture { get;private set; }
         public string PictureAlt { get;private set; }
         public string PictureTitle { get;private set; }
-        //public int CategoryId { get; set; }
-        //public Category Category { get; set; }
+        public long CategoryId { get;private set; }
+        public Category Category { get;private set; }
 
-        public Product(string name, string description, decimal price, int stock, string slug, string picture, string pictureAlt, string pictureTitle)
+        public Product(string name, string description, decimal price, int stock, string slug, string picture, string pictureAlt, string pictureTitle,int categoryId)
         {
             if(string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("Product name cannot be null or empty.", nameof(name));
             if(price < 0)
                 throw new ArgumentOutOfRangeException(nameof(price), "Price cannot be negative.");
-
+            if(categoryId <= 0)
+                throw new ArgumentOutOfRangeException(nameof(categoryId), "CategoryId must be a positive integer.");
             ProductId = Guid.NewGuid();
             Name = name;
             Description = description;
@@ -32,6 +33,7 @@ namespace OnlineStore.Domain.Entities
             Picture = picture;
             PictureAlt = pictureAlt;
             PictureTitle = pictureTitle;
+            CategoryId = categoryId;
         }
     }
 }
