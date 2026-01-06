@@ -1,1 +1,11 @@
-<Solution />
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Core/">
+    <Project Path="OnlineStore.Application/OnlineStore.Application.csproj" />
+    <Project Path="OnlineStore.Domain/OnlineStore.Domain.csproj" />
+  </Folder>
+  <Folder Name="/src/Infrastructure/">
+    <Project Path="OnlineStore.Infrastructure/OnlineStore.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Presentation/" />
+</Solution>
