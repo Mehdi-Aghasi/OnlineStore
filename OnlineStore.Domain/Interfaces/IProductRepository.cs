@@ -1,6 +1,6 @@
 ﻿using OnlineStore.Domain.Entities;
 
-namespace OnlineStore.Domain.Repositories
+namespace OnlineStore.Domain.Interfaces
 {
     public interface IProductRepository: IGenericRepository<Product>
     {
