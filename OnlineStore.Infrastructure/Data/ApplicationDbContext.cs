@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnlineStore.Domain.Entities;
-using System.Net.Http.Headers;
+using OnlineStore.Infrastructure.Configurations;
 
 namespace OnlineStore.Infrastructure.Data
 {
@@ -10,7 +10,7 @@ namespace OnlineStore.Infrastructure.Data
         public DbSet<Category> Categories { get;set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ProductConfiguration).Assembly);
             base.OnModelCreating(modelBuilder);
         }
         
