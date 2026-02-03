@@ -4,6 +4,7 @@ namespace OnlineStore.Domain.Entities
 {
     public class Product:BaseEntity
     {
+        public Guid UId { get; private set; }= Guid.NewGuid();
         public string Name { get;private set; }
         public string Description { get;private set; }
         public decimal Price { get;private set; }
@@ -15,24 +16,20 @@ namespace OnlineStore.Domain.Entities
         public long CategoryId { get;private set; }
         public Category Category { get;private set; }
 
-        public Product(string name, string description, decimal price, int stock, string slug, string picture, string pictureAlt, string pictureTitle,int categoryId)
+        public Product(string name, string description, decimal price, string slug,int categoryid)
         {
             if(string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("Product name cannot be null or empty.", nameof(name));
             if(price < 0)
                 throw new ArgumentOutOfRangeException(nameof(price), "Price cannot be negative.");
-            if(categoryId <= 0)
-                throw new ArgumentOutOfRangeException(nameof(categoryId), "CategoryId must be a positive integer.");
-            ProductId = Guid.NewGuid();
             Name = name;
             Description = description;
             Price = price;
-            Stock = stock;
+            Stock = 0;
             Slug = slug;
-            Picture = picture;
-            PictureAlt = pictureAlt;
-            PictureTitle = pictureTitle;
-            CategoryId = categoryId;
+            CategoryId= categoryid;
         }
+
+
     }
 }
