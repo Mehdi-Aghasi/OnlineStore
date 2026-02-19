@@ -8,7 +8,10 @@ namespace OnlineStore.Domain.Entities
         public string Name { get;private set; }
         public string Description { get;private set; }
         public string Slug { get;private set; }
-        public ICollection<Product> Products { get; private set; }
+        public ICollection<Product> Products { get; private set; }=new List<Product>();
+        public Category()
+        {
+        }
         public Category(string name, string description, string slug)
         {
             if(string.IsNullOrWhiteSpace(name))
