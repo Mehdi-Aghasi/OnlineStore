@@ -15,8 +15,10 @@ namespace OnlineStore.Domain.Entities
         public string PictureTitle { get;private set; }
         public long CategoryId { get;private set; }
         public Category Category { get;private set; }
-
-        public Product(string name, string description, decimal price, string slug,int categoryid)
+        public Product()
+        {
+        }
+        public Product(string name, string description, decimal price, string slug,long categoryid)
         {
             if(string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("Product name cannot be null or empty.", nameof(name));
@@ -29,7 +31,5 @@ namespace OnlineStore.Domain.Entities
             Slug = slug;
             CategoryId= categoryid;
         }
-
-
     }
 }
