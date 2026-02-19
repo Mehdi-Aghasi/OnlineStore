@@ -38,7 +38,7 @@ namespace OnlineStore.Domain.Entities
                 throw new ArgumentOutOfRangeException(nameof(quantity), "Quantity cannot be negative.");
             Stock += quantity;
         }
-        public void UpdatePrice(int amount) {
+        public void UpdatePrice(decimal amount) {
             if (amount <= 0)
                 throw new ArgumentOutOfRangeException(nameof(amount), "Quantity cannot be negative.");
             Price += amount;
