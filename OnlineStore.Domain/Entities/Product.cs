@@ -21,7 +21,7 @@ namespace OnlineStore.Domain.Entities
         public Product(string name, string description, decimal price, string slug,long categoryid)
         {
             if(string.IsNullOrWhiteSpace(name))
-                throw new ArgumentException("Product name cannot be null or empty.");
+                throw new ArgumentException("Product name cannot be null or empty.",nameof(name));
             if(price < 0)
                 throw new ArgumentOutOfRangeException(nameof(price), "Price cannot be negative.");
             Name = name;
