@@ -9,7 +9,7 @@ namespace OnlineStore.Application.Common.Mappings
         public ProductProfile()
         {
             CreateMap<Product, ProductDto>()
-           .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.Name));
+           .ForMember(x => x.CategoryName, opt => opt.MapFrom(src => src.Category.Name));
         }
     }
 }

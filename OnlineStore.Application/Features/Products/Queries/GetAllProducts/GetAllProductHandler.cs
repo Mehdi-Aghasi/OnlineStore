@@ -15,7 +15,6 @@ namespace OnlineStore.Application.Features.Products.Queries.GetAllProducts
             _mapper = mapper;
         }
 
-      
         public async Task<IEnumerable<ProductDto>> Handle(GetAllProductQuery request, CancellationToken cancellationToken)
         {
             var products = await _repository.GetAllAsync();

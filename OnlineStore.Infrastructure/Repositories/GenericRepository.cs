@@ -34,6 +34,11 @@ namespace OnlineStore.Infrastructure.Repositories
             return await _dbSet.AnyAsync(e => e.Id == id && !e.IsDeleted);
         }
 
+        public virtual async Task<T?> FindByIdAsync(long id)
+        {
+           return await _dbSet.FindAsync(id);
+        }
+
         public virtual async Task<IEnumerable<T>> GetAllAsync()
         {
             return await _dbSet.AsNoTracking().Where(e => !e.IsDeleted).ToListAsync();
