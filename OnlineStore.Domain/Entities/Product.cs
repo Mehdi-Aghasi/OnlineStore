@@ -21,7 +21,7 @@ namespace OnlineStore.Domain.Entities
         public Product(string name, string description, decimal price, string slug,long categoryid)
         {
             if(string.IsNullOrWhiteSpace(name))
-                throw new ArgumentException("Product name cannot be null or empty.", nameof(name));
+                throw new ArgumentException("Product name cannot be null or empty.",nameof(name));
             if(price < 0)
                 throw new ArgumentOutOfRangeException(nameof(price), "Price cannot be negative.");
             Name = name;
@@ -30,6 +30,18 @@ namespace OnlineStore.Domain.Entities
             Stock = 0;
             Slug = slug;
             CategoryId= categoryid;
+        }
+
+        public void UpdateStock(int quantity)
+        {
+            if (quantity <= 0)
+                throw new ArgumentOutOfRangeException(nameof(quantity), "Quantity cannot be negative.");
+            Stock += quantity;
+        }
+        public void UpdatePrice(decimal amount) {
+            if (amount <= 0)
+                throw new ArgumentOutOfRangeException(nameof(amount), "Quantity cannot be negative.");
+            Price += amount;
         }
     }
 }

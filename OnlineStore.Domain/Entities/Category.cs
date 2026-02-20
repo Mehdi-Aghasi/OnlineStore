@@ -21,5 +21,11 @@ namespace OnlineStore.Domain.Entities
             Slug = slug;
             Products = new List<Product>();
         }
+        public void AddProduct(Product product)
+        {
+            if (product == null)
+                throw new ArgumentNullException(nameof(product), "Product cannot be null.");
+            Products.Add(product);
+        }
     }
 }
