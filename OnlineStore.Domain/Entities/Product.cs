@@ -32,6 +32,25 @@ namespace OnlineStore.Domain.Entities
             CategoryId= categoryid;
         }
 
+        public void Update(string name, string description, decimal price,int stock,string slug,string picture,string pictureAlt,string pictureTitle,long categoryid)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+                throw new ArgumentException("Product name cannot be null or empty.", nameof(name));
+            if (price < 0)
+                throw new ArgumentOutOfRangeException(nameof(price), "Price cannot be negative.");
+            Name = name;
+            Description = description;
+            Price = price;
+            Slug = slug;
+            CategoryId= categoryid;
+            Stock= stock;
+            Picture = picture;
+            PictureAlt= pictureAlt;
+            PictureTitle= pictureTitle;
+            UpdatedAt = DateTime.UtcNow;
+        }
+
+
         public void UpdateStock(int quantity)
         {
             if (quantity <= 0)
