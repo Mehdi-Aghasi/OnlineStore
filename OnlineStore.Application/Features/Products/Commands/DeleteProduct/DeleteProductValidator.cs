@@ -7,7 +7,7 @@ namespace OnlineStore.Application.Features.Products.Commands.DeleteProduct
         public DeleteProductValidator()
         {
             RuleFor(x => x.Id)
-                .GreaterThan(0).WithMessage("Product ID must be greater than 0.")
+                .GreaterThan(0).WithMessage("Product ID must be greater than 0.");
         }
     }
 }
