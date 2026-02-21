@@ -12,6 +12,15 @@ namespace OnlineStore.Domain.Entities
         public Category()
         {
         }
+
+        public void Update(string name, string description, string slug)
+        {
+            if(string.IsNullOrWhiteSpace(name))
+                throw new ArgumentException("Category name cannot be null or empty.", nameof(name));
+            Name = name;
+            Description = description;
+            Slug = slug;
+        }
         public Category(string name, string description, string slug)
         {
             if(string.IsNullOrWhiteSpace(name))
