@@ -16,6 +16,7 @@ namespace OnlineStore.Domain.Entities
         public long CategoryId { get;private set; }
         public Category Category { get;private set; }
         public ICollection<CartItem> CartItems { get;private set; }
+        public ICollection<OrderItem> OrderItems { get; set; }
         public Product()
         {
         }
