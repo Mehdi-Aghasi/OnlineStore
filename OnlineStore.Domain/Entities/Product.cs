@@ -15,6 +15,7 @@ namespace OnlineStore.Domain.Entities
         public string PictureTitle { get;private set; }
         public long CategoryId { get;private set; }
         public Category Category { get;private set; }
+        public ICollection<CartItem> CartItems { get;private set; }
         public Product()
         {
         }
@@ -30,6 +31,7 @@ namespace OnlineStore.Domain.Entities
             Stock = 0;
             Slug = slug;
             CategoryId= categoryid;
+            CartItems = new List<CartItem>();
         }
 
         public void Update(string name, string description, decimal price,int stock,string slug,string picture,string pictureAlt,string pictureTitle,long categoryid)
