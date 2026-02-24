@@ -7,5 +7,7 @@
   <Folder Name="/src/Infrastructure/">
     <Project Path="OnlineStore.Infrastructure/OnlineStore.Infrastructure.csproj" />
   </Folder>
-  <Folder Name="/src/Presentation/" />
+  <Folder Name="/src/Presentation/">
+    <Project Path="OnlineStore.WebApi/OnlineStore.WebApi.csproj" Id="77a3ef14-fac3-4052-a3fb-db1be0f53e71" />
+  </Folder>
 </Solution>

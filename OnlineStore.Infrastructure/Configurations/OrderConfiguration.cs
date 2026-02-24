@@ -26,11 +26,6 @@ namespace OnlineStore.Infrastructure.Configurations
                 .IsRequired()
                 .HasConversion<string>()
                 .HasMaxLength(50);
-            builder.HasMany(o => o.OrderItems)
-                .WithOne(oi => oi.Order)
-                .HasForeignKey(oi => oi.OrderId)
-                .OnDelete(DeleteBehavior.Cascade);
-            builder.HasQueryFilter(o => !o.IsDeleted);
         }
     }
 }

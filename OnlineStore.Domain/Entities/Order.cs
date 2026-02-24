@@ -12,6 +12,7 @@ namespace OnlineStore.Domain.Entities
         public string ShippingAddress { get; private set; }
         public OrderStatus OrderStatus { get; private set; }
         public ICollection<OrderItem> OrderItems { get; private set; }
+        public Payment Payment { get; private set; }
 
         public Order(string userId, string customerName)
         {

@@ -13,10 +13,6 @@ namespace OnlineStore.Infrastructure.Configurations
                     .IsRequired()
                     .HasMaxLength(450);
             builder.HasQueryFilter(c => !c.IsDeleted);
-            builder.HasMany(c => c.CartItems)
-                   .WithOne(ci => ci.Cart)
-                   .HasForeignKey(ci => ci.CartId)
-                   .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

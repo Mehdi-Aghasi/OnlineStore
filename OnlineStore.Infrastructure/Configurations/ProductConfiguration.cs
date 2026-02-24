@@ -26,12 +26,6 @@ namespace OnlineStore.Infrastructure.Configurations
             builder.HasOne(c => c.Category)
                 .WithMany(p => p.Products)
                 .HasForeignKey(p => p.CategoryId);
-            builder.HasMany(c=>c.CartItems)
-                .WithOne(p => p.Product)
-                .HasForeignKey(p => p.ProductId);
-            builder.HasMany(c => c.OrderItems)
-                .WithOne(p => p.Product)
-                .HasForeignKey(p => p.ProductId);
 
             builder.HasQueryFilter(p=>!p.IsDeleted);
         }

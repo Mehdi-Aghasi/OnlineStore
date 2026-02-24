@@ -16,9 +16,6 @@ namespace OnlineStore.Infrastructure.Configurations
             builder.Property(c => c.Slug)
                 .IsRequired()
                 .HasMaxLength(100);
-            builder.HasMany(c => c.Products)
-                 .WithOne(p => p.Category)
-                 .HasForeignKey(p => p.CategoryId);
         }
     }
 }
