@@ -32,6 +32,9 @@ namespace OnlineStore.Domain.Entities
             Stock = 0;
             Slug = slug;
             CategoryId= categoryid;
+            Picture = "nophoto.png";
+            PictureAlt = name;
+            PictureTitle = name;
             CartItems = new List<CartItem>();
         }
 

@@ -1,12 +1,13 @@
 ﻿using MediatR;
 using OnlineStore.Application.Features.Carts.Commands.RemoveFromCart;
+using OnlineStore.Domain.Entities;
 using OnlineStore.Domain.Interfaces;
 
 public class RemoveFromCartHandler : IRequestHandler<RemoveFromCartCommand>
 {
-    private readonly ICartItemRepository _repository;
+    private readonly IGenericRepository<CartItem> _repository;
 
-    public RemoveFromCartHandler(ICartItemRepository repository)
+    public RemoveFromCartHandler(IGenericRepository<CartItem> repository)
     {
         _repository = repository;
     }

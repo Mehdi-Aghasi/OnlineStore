@@ -17,10 +17,12 @@ namespace OnlineStore.Application.Features.Carts.Queries.GetCartByUserId
         public async Task<CartDto> Handle(GetCartByUserIdQuery request, CancellationToken cancellationToken)
         {
             var cart = await _cartRepository.GetCartByUserIdAsync(request.UserId);
+            
             if (cart == null)
             {
-                throw new KeyNotFoundException($"Cart for user {request.UserId} not found.");
+                return new CartDto(0, request.UserId, new List<CartItemDto>());
             }
+
             return _mapper.Map<CartDto>(cart);
         }
     }
