@@ -27,6 +27,7 @@ namespace OnlineStore.Infrastructure.Configurations
                 .WithMany(p => p.OrderItems)
                 .HasForeignKey(oi => oi.ProductId)
                 .OnDelete(DeleteBehavior.Restrict);
+            builder.HasQueryFilter(x => !x.IsDeleted);
         }
     }
 }
