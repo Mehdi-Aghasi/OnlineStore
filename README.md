@@ -1,12 +1,12 @@
 ﻿# 🛒 OnlineStore Backend API
 
-![.NET](https://img.shields.io/badge/.NET-8.0%2F9.0-512BD4?style=flat&logo=dotnet)
-![C#](https://img.shields.io/badge/C%23-12-239120?style=flat&logo=c-sharp)
+![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?style=flat&logo=dotnet)
+![C#](https://img.shields.io/badge/C%23-13-239120?style=flat&logo=c-sharp)
 ![EF Core](https://img.shields.io/badge/EF%20Core-Code--First-512BD4)
 ![Architecture](https://img.shields.io/badge/Architecture-Clean-blue)
 ![Pattern](https://img.shields.io/badge/Pattern-CQRS-green)
 
-A robust, scalable, and secure RESTful API for an E-commerce platform built with **.NET Core**, adhering to **Clean Architecture** principles and the **CQRS** pattern.
+A robust, scalable, and secure RESTful API for an E-commerce platform built with **.NET 10**, adhering to **Clean Architecture** principles and the **CQRS** pattern.
 
 ---
 
@@ -23,8 +23,8 @@ The solution follows the **Clean Architecture (Onion Architecture)** approach to
 
 ## 🛠️ Technologies & Libraries
 
-- **Framework:** .NET 8 / .NET 9
-- **Language:** C# 12
+- **Framework:** .NET 10 (Preview)
+- **Language:** C# 13
 - **Database:** SQL Server
 - **ORM:** Entity Framework Core (Code-First)
 - **Auth:** ASP.NET Core Identity + JWT Bearer
@@ -69,12 +69,12 @@ The solution follows the **Clean Architecture (Onion Architecture)** approach to
 Follow these steps to run the project locally:
 
 ### Prerequisites
-- .NET SDK (8.0 or later)
+- .NET SDK (10.0 or later)
 - SQL Server (LocalDB or Docker)
 
 ### Installation
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/YOUR-USERNAME/OnlineStore.git
+   git clone https://github.com/Mehdi-Aghasi/OnlineStore.git
    cd OnlineStore
